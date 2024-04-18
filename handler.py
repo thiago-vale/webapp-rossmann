@@ -29,5 +29,5 @@ def rossmann_predict():
         return Response( '{}', status=200, mimetype='application/json' )
     
 if __name__ == '__main__':
-    port = os.environ( 'PORT', 10000 )
+    port = os.environ.get( 'PORT', 5000 )
     app.run( '0.0.0.0', port=port )
