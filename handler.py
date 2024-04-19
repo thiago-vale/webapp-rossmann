@@ -4,7 +4,7 @@ from flask import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 import os
 
-model = pickle.load( open( './model/model_xgb_tuned.pkl', 'rb') )
+model = pickle.load( open( 'model/model_xgb_tuned.pkl', 'rb') )
 
 app = Flask( __name__ )
 
@@ -30,4 +30,4 @@ def rossmann_predict():
     
 if __name__ == '__main__':
     port = os.environ.get( 'PORT', 5000 )
-    app.run( '0.0.0.0', port=port )
+    app.run( host='0.0.0.0', port=port )

@@ -7,12 +7,12 @@ from datetime import datetime , timedelta
 
 class Rossmann( object ):
     def __init__(self):
-        self.path = ''
-        self.competition_distance_scaler = pickle.load( open( 'parameter/competition_distance_scaler.pkl', 'rb' ) )
-        self.competition_time_month_scaler = pickle.load( open('parameter/competition_time_month_scaler.pkl', 'rb' ) )
-        self.promo_time_week_scaler = pickle.load( open('parameter/promo_time_week_scaler.pkl', 'rb' ) )
-        self.year_scaler = pickle.load( open( 'parameter/year_scaler.pkl', 'rb' ) )
-        self.store_type_scaler = pickle.load( open('parameter/store_type_scaler.pkl', 'rb' ) )
+        self.home_path = ''
+        self.competition_distance_scaler = pickle.load( open( self.home_path + 'parameter/competition_distance_scaler.pkl', 'rb' ) )
+        self.competition_time_month_scaler = pickle.load( open( self.home_path + 'parameter/competition_time_month_scaler.pkl', 'rb' ) )
+        self.promo_time_week_scaler = pickle.load( open( self.home_path + 'parameter/promo_time_week_scaler.pkl', 'rb' ) )
+        self.year_scaler = pickle.load( open( self.home_path + 'parameter/year_scaler.pkl', 'rb' ) )
+        self.store_type_scaler = pickle.load( open( self.home_path + 'parameter/store_type_scaler.pkl', 'rb' ) )
 
     def data_clean(self, df1):
         cols_old = ['Store', 'DayOfWeek', 'Date', 'Open', 'Promo',
